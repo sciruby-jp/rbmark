@@ -2,21 +2,14 @@
 
 *rubydown* is pure-Ruby [R Markdown](https://rmarkdown.rstudio.com/) clone.
 
-## Installation
+## Quick Start
 
 ```
-git clone git://github.com/sciruby-jp/rubydown
-cd rubydown
-rake build
-rake install
-```
-
-And then execute:
-
-    $ /usr/local/bundle/bin/rubydown --version
-
-## Usage
-
-```
-/usr/local/bundle/bin/rubydown -i INPUTRBMD -e ERBFILE -o OUTPUTNAME
+docker run -it -v c:/Users:/data ruby bash
+gem install specific_install
+gem specific_install https://github.com/sciruby-jp/rubydown.git
+apt update
+apt install gnuplot
+rubydown -i /usr/local/bundle/gems/rubydown-0.1.0/examples/data_science.md -e /usr/local/bundle/gems/rubydown-0.1.0/templates/template.html.erb -o /data/YOURNAME/data_science.html
+cp data_science.md /data/YOURNAME/data_science.md
 ```
