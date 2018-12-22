@@ -79,6 +79,10 @@ def main # to separate binding
     opts.on("-o OUTPUT") do |output|
       options[:output] = output
     end
+    opts.on_tail("--version", "Show version") do
+      puts "0.1.0"
+      exit
+    end
   end
 
   option_parser.parse!
