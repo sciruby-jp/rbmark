@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Rubydown::VERSION
   spec.authors       = ["Kozo Nishida"]
   spec.email         = ["knishida@riken.jp"]
-
+  spec.license       = 'MIT'
   spec.summary       = "Pure Ruby R Markdown clone."
   spec.description   = "rubydown is R Markdown clone for Rubyists."
   spec.homepage      = "https://github.com/sciruby-jp/rubydown"
