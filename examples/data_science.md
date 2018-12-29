@@ -11,7 +11,7 @@ a = Numo::DFloat.new(3, 5).seq
 
 
 ~~~ruby
-rp = RbMarkPlot.new
+rp = Rubydown::RbMarkPlot.new
 rp.set title: "Example Plot"
 rp.plot "sin(x)", w:"lines"
 ~~~
