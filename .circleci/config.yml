@@ -1,0 +1,32 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+       - image: ruby
+      
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: install rubydown
+          command: |
+            apt-get update
+            apt-get install -y gnuplot
+            gem build rubydown.gemspec
+            gem install rubydown-0.1.0.gem
+            
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            rubydown -i examples/data_science.md -e templates/template.html.erb -o /tmp/test.html
+            
+      # collect reports
+      - store_artifacts:
+          path: /tmp/test.html
