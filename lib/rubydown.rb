@@ -39,7 +39,7 @@ module Rubydown
     end
   
     def to_html
-      img_b64 = Base64.encode64(File.read(@tempfile))
+      img_b64 = Base64.encode64(File.binread(@tempfile))
       <<-HTML
         <img src='data:image/png;base64,#{img_b64}' />
       HTML
