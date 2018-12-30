@@ -1,5 +1,6 @@
 # rubydown
 
+[![CircleCI](https://circleci.com/gh/sciruby-jp/rubydown/tree/master.svg?style=svg)](https://circleci.com/gh/sciruby-jp/rubydown/tree/master)
 [![Build status](https://ci.appveyor.com/api/projects/status/rroa24x9jgdwuka5?svg=true)](https://ci.appveyor.com/project/kozo2/rubydown)
 
 
