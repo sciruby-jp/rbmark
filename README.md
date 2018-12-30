@@ -1,5 +1,8 @@
 # rubydown
 
+[![Build status](https://ci.appveyor.com/api/projects/status/rroa24x9jgdwuka5?svg=true)](https://ci.appveyor.com/project/kozo2/rubydown)
+
+
 *rubydown* is pure-Ruby [R Markdown](https://rmarkdown.rstudio.com/) clone.
 
 ## Quick Start
