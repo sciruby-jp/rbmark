@@ -1,0 +1,23 @@
+# appveyor.yml
+install:
+  - set PATH=C:\Ruby25-x64\bin;%PATH%
+  - gem build rubydown.gemspec
+  - gem install rubydown-0.1.0.gem
+
+build: off
+
+before_test:
+  - ruby -v
+  - gem -v
+  - bundle -v
+  - rubydown --version
+
+test_script:
+  - choco install gnuplot
+  - set PATH=C:\Program Files\gnuplot\bin;%PATH%
+  - gnuplot --version
+  - rubydown -i examples\data_science.md -e templates\template.html.erb -o test.html
+  
+artifacts:
+  # bdist_wheel puts your built wheel in the dist directory
+  - path: test.html
