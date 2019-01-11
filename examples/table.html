@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css' rel='stylesheet' type='text/css' />
+    <style>
+      article.markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+
+      span.line-numbers {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <article class='markdown-body'>
+      <h1 id="table-generation-example">Table generation example</h1>
+
+<h2 id="with-numonarray">With Numo::Narray</h2>
+
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>a = <span style="color:#036;font-weight:bold">Numo</span>::<span style="color:#036;font-weight:bold">DFloat</span>.new(<span style="color:#00D">3</span>, <span style="color:#00D">5</span>).seq
+</pre></div>
+</div>
+</div>
+  <table>
+    <tbody>
+      <tr>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>2.0</td>
+        <td>3.0</td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>5.0</td>
+        <td>6.0</td>
+        <td>7.0</td>
+        <td>8.0</td>
+        <td>9.0</td>
+      </tr>
+      <tr>
+        <td>10.0</td>
+        <td>11.0</td>
+        <td>12.0</td>
+        <td>13.0</td>
+        <td>14.0</td>
+      </tr>
+    </tbody>
+  </table>
+
+    </article>
+  </body>
+</html>
+
