@@ -25,8 +25,10 @@ jobs:
       - run:
           name: run tests
           command: |
-            rubydown -i examples/data_science.md -e templates/template.html.erb -o /tmp/test.html
+            rubydown -i examples/bio.md -e templates/template.html.erb -o /tmp/bio.html
+            rubydown -i examples/table.md -e templates/template.html.erb -o /tmp/table.html
+            rubydown -i examples/graph.md -e templates/template.html.erb -o /tmp/graph.html
             
       # collect reports
       - store_artifacts:
-          path: /tmp/test.html
+          path: /tmp
