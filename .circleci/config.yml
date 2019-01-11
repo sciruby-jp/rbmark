@@ -20,6 +20,7 @@ jobs:
             apt-get install -y gnuplot
             gem build rubydown.gemspec
             gem install rubydown-0.1.0.gem
+            gem install bio
             
       # run tests!
       - run:
