@@ -16,8 +16,9 @@ test_script:
   - choco install gnuplot
   - set PATH=C:\Program Files\gnuplot\bin;%PATH%
   - gnuplot --version
-  - rubydown -i examples\data_science.md -e templates\template.html.erb -o test.html
+  - rubydown -i examples\bio.md -e templates\template.html.erb -o bio.html
+  - rubydown -i examples\graph.md -e templates\template.html.erb -o graph.html
+  - rubydown -i examples\table.md -e templates\template.html.erb -o table.html
   
 artifacts:
-  # bdist_wheel puts your built wheel in the dist directory
-  - path: test.html
+  - path: '*.html'
