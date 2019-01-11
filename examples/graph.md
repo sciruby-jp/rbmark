@@ -1,6 +1,6 @@
 # Graph generation example
 
-## With Numo::Gnuplot
+## With [Numo::Gnuplot](https://github.com/ruby-numo/numo-gnuplot)
 
 `Rubydown::RbMarkPlot` is extended class of `Numo::Gnuplot`
 
