@@ -1,7 +1,7 @@
 require "rubydown/version"
 
 require 'numo/narray'
-
+require 'rbplotly'
 require 'numo/gnuplot'
 require 'base64'
 require 'tempfile'
@@ -19,25 +19,32 @@ class Numo::NArray
   end
 end
 
+class Plotly::Plot
+  def to_html
+    html=create_html(@data, layout: @layout, embedded: false)
+    html.render
+  end
+end
+
 module Rubydown
   class RbMarkPlot < Numo::Gnuplot
     def plot(*args)
       super(*args)
       self
     end
-  
+
     def splot(*args)
       super(*args)
       self
     end
-  
+
     def _plot_splot(*args)
       @tempfile = Tempfile.open(['plot', '.png'])
       set terminal: 'png'
       set output: @tempfile.path
       super(*args)
     end
-  
+
     def to_html
       img_b64 = Base64.encode64(File.binread(@tempfile))
       <<-HTML
