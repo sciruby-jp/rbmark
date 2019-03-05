@@ -21,9 +21,10 @@ gem install specific_install
 gem specific_install https://github.com/sciruby-jp/rubydown
 ```
 
-## Usage
+## Usage (example with [rumale](https://github.com/yoshoku/rumale) and [rdatasets](https://github.com/kojix2/rdatasets))
 
 ```
+gem install rumale rdatasets
 git clone git://github.com/sciruby-jp/rubydown
 cd rubydown/examples
 /usr/local/bundle/bin/rubydown -i rumale.md -e /usr/local/bundle/gems/rubydown-0.1.0/templates/template.html.erb -o rumale-test.html
