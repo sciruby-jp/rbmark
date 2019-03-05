@@ -40,6 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "daru"
   spec.add_dependency "numo-narray"
   spec.add_dependency "numo-gnuplot"
+  spec.add_dependency "rbplotly"
 
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
