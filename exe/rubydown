@@ -3,7 +3,7 @@
 require 'kramdown'
 require 'erb'
 require 'stringio'
-
+require 'mkmf'
 require 'optparse'
 
 require 'rubydown'
@@ -92,8 +92,14 @@ def main # to separate binding
   # puts options[:erb]
   # puts options[:output]
 
-  doc = EvalDoc.new(File.read(options[:input], encoding: 'utf-8')) # using in ERB
-  File.write(options[:output], ERB.new(File.read(options[:erb])).result(binding))
+  if options[:input].strip.end_with?(".ipynb")
+    if find_executable 'jupyter-nbconvert'
+      system('jupyter-nbconvert --to markdown ' + options[:input])
+    else
+      doc = EvalDoc.new(File.read(options[:input], encoding: 'utf-8')) # using in ERB
+      File.write(options[:output], ERB.new(File.read(options[:erb])).result(binding))
+    end
+  end  
 #  puts ERB.new(File.read(options[:erb])).result(binding)
 end
 
