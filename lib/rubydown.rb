@@ -5,6 +5,7 @@ require 'rbplotly'
 require 'numo/gnuplot'
 require 'base64'
 require 'tempfile'
+require 'charty'
 
 
 class Numo::NArray
@@ -28,6 +29,13 @@ class Numo::NArray
     end
   end
 end
+
+Charty::RenderContext.prepend Module.new {
+  def render(filename=nil)
+    super
+    File.open(filename)
+  end
+}
 
 module Rubydown
   class RbMarkPlot < Numo::Gnuplot

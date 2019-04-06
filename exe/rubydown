@@ -3,7 +3,7 @@
 require 'kramdown'
 require 'erb'
 require 'stringio'
-
+require 'base64'
 require 'optparse'
 
 require 'rubydown'
@@ -62,6 +62,9 @@ class EvalDoc < Kramdown::Document
     case
     when eval_result.respond_to?(:to_html)
       Kramdown::Document.new(eval_result.to_html, input: :html).root
+    when eval_result.instance_of?(File) && eval_result.path[-4,4] == ".png"
+      img_b64 = Base64.encode64(File.binread(eval_result))
+      Kramdown::Document.new("<img src='data:image/png;base64,#{img_b64}' />", input: :html).root
     else
       text_result_el(stdout_string + "=> #{eval_result}")
     end
