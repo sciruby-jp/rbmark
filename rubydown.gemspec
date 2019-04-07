@@ -40,6 +40,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "numo-narray", "~> 0.9.1"
   spec.add_dependency "numo-gnuplot", "~> 0.2.4"
   spec.add_dependency "rbplotly", "~> 0.1.2"
+  spec.add_dependency "charty", "0.1.1.dev"
+  spec.add_dependency "matplotlib", "~> 1.0.0"
 
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
